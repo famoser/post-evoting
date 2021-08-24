@@ -1,0 +1,18 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+			 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+			 bean-discovery-mode="all">
+	<decorators>
+		<class>ch.post.it.evoting.votingserver.voteverification.domain.service.ValidationServiceDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.domain.model.rule.PlainTextEqualityProofRuleDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.domain.model.rule.ExponentiationProofRuleDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.domain.model.rule.VerifyVerificationCardPKSignatureRuleDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.infrastructure.persistence.CodesMappingRepositoryDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.infrastructure.persistence.VerificationRepositoryDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.infrastructure.persistence.VerificationContentRepositoryDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.infrastructure.persistence.VerificationSetRepositoryDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.infrastructure.persistence.ElectionPublicKeyRepositoryDecorator</class>
+		<class>ch.post.it.evoting.votingserver.voteverification.infrastructure.persistence.VerificationDerivedKeysRepositoryDecorator</class>
+	</decorators>
+
+</beans>

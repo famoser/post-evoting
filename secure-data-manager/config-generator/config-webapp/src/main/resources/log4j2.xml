@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+			</EscapingLogLayout>
+		</Console>
+		<File name="RegularAppender" fileName="${sys:user.home}/sdmServices/logs/config-generator.log">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}|%p|%t|%m%n"/>
+			</EscapingLogLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Logger name="org.springframework.batch.core" level="INFO">
+			<AppenderRef ref="RegularAppender"/>
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="ConsoleAppender"/>
+		</Root>
+	</Loggers>
+</Configuration>

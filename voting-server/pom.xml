@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ch.post.it.evoting</groupId>
+		<artifactId>evoting-dependencies</artifactId>
+		<version>0.11.3.0</version>
+		<relativePath>../evoting-dependencies/pom.xml</relativePath>
+	</parent>
+
+	<groupId>ch.post.it.evoting.votingserver</groupId>
+	<artifactId>voting-server</artifactId>
+	<version>0.11.3.0</version>
+	<packaging>pom</packaging>
+
+	<name>Voting Server</name>
+
+	<modules>
+		<module>commons</module>
+		<module>orchestrator</module>
+		<module>certificate-registry</module>
+		<module>extended-authentication</module>
+		<module>api-gateway</module>
+		<module>authentication</module>
+		<module>election-information</module>
+		<module>voter-material</module>
+		<module>vote-verification</module>
+		<module>voting-workflow</module>
+		<module>voting-server-assembly</module>
+	</modules>
+
+	<properties>
+		<com.github.cukespace.version>1.6.7</com.github.cukespace.version>
+		<easymock.version>4.3</easymock.version>
+		<hibernate.version>5.5.6.Final</hibernate.version>
+		<hsqldb.version>2.3.6</hsqldb.version>
+		<info.cukes.version>1.2.5</info.cukes.version>
+		<javac.version>1.8</javac.version>
+		<jbosscc-needle.version>2.2</jbosscc-needle.version>
+		<jmockit.version>1.17</jmockit.version> <!-- Old 1.17 needed for some submodules -->
+		<maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+		<org.apache.jcs.version>1.3</org.apache.jcs.version>
+		<qpid.version>8.0.5</qpid.version>
+		<rabbitmq.version>5.4.3</rabbitmq.version>
+		<surefire.version>2.22.2</surefire.version>
+		<surefire.extra.args>
+			@{argLine}
+			-Xmx2048m
+			-XX:CompileCommand="dontinline,java/lang/System.currentTimeMillis"
+			-javaagent:"${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar"
+		</surefire.extra.args>
+		<system-rules.version>1.19.0</system-rules.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.rabbitmq</groupId>
+				<artifactId>amqp-client</artifactId>
+				<version>${rabbitmq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.post.it.evoting.logger</groupId>
+				<artifactId>logger</artifactId>
+				<version>${logger.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.qpid</groupId>
+				<artifactId>qpid-broker-plugins-amqp-0-8-protocol</artifactId>
+				<version>${qpid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.qpid</groupId>
+				<artifactId>qpid-broker-plugins-memory-store</artifactId>
+				<version>${qpid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.akquinet.jbosscc</groupId>
+				<artifactId>jbosscc-needle</artifactId>
+				<version>${jbosscc-needle.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- easymock is needed as a declared optional dependency of jbosscc-needle -->
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>${easymock.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.stefanbirkner</groupId>
+				<artifactId>system-rules</artifactId>
+				<version>${system-rules.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hsqldb</groupId>
+				<artifactId>hsqldb</artifactId>
+				<version>${hsqldb.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>ch.post.it.evoting.domain</groupId>
+			<artifactId>domain</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<failOnWarning>false</failOnWarning>
+						<compilerArgs>
+							<arg>-Xlint</arg>
+						</compilerArgs>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<source>${javac.version}</source>
+						<target>${javac.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${surefire.version}</version>
+					<configuration>
+						<skipTests>${skipTests}</skipTests>
+						<argLine>${surefire.extra.args}</argLine>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

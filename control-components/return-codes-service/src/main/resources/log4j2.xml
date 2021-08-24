@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+			</EscapingLogLayout>
+		</Console>
+
+		<SecureLogAppender name="SecureLogAppender" linesBetweenCheckpoints="12"
+											 fileName="logs/ccr_secure.log" filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"	sizePolicy="250 MB">
+			<SecureLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSSXX} %-5p %c{1}:%L - %m"/>
+			</SecureLogLayout>
+		</SecureLogAppender>
+	</Appenders>
+	<Loggers>
+		<Logger name="SecureLog" level="INFO" additivity="false">
+			<AppenderRef ref="SecureLogAppender"/>
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="ConsoleAppender"/>
+		</Root>
+	</Loggers>
+</Configuration>

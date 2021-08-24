@@ -1,0 +1,21 @@
+/*
+ * (c) Copyright 2021 Swiss Post Ltd.
+ */
+package ch.post.it.evoting.votingserver.voteverification.service.crypto;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import javax.inject.Qualifier;
+
+/**
+ * Entities annotated as Secret are related to secret keys crypto material and symmetric operations
+ */
+@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ ElementType.FIELD, ElementType.METHOD, ElementType.TYPE })
+public @interface Secret {
+
+}

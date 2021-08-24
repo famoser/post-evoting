@@ -1,0 +1,24 @@
+{
+  "correctnessInformationList": [
+	{
+	  "correctnessId": "e65ce1ebeb9840a79c952a6ceae4c681",
+	  "numberOfSelections": 7,
+	  "numberOfVotingOptions": 99
+	},
+	{
+	  "correctnessId": "e727a2d916774758bd0c6f256c5ae241",
+	  "numberOfSelections": 1,
+	  "numberOfVotingOptions": 8
+	},
+	{
+	  "correctnessId": "afaf857e8612471aa019f4b4ae0c4cd5",
+	  "numberOfSelections": 2,
+	  "numberOfVotingOptions": 10
+	},
+	{
+	  "correctnessId": "117bad3080214e94afe1abc811ebb2fb",
+	  "numberOfSelections": 1,
+	  "numberOfVotingOptions": 7
+	}
+  ]
+}

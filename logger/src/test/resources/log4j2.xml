@@ -1,0 +1,36 @@
+<Configuration status="WARN">
+	<Appenders>
+		<File name="DebugFile" fileName="target/logs/debug-log4j.log">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}|%p|%t|%m%n"/>
+			</EscapingLogLayout>
+		</File>
+
+		<File name="InfoFile" fileName="target/logs/info-log4j.log">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}|%p|%t|%m%n"/>
+			</EscapingLogLayout>
+		</File>
+
+		<File name="WarnFile" fileName="target/logs/warn-log4j.log">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}|%p|%t|%m%n"/>
+			</EscapingLogLayout>
+		</File>
+
+		<File name="ErrorFile" fileName="target/logs/error-log4j.log">
+			<EscapingLogLayout>
+				<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS}|%p|%t|%m%n"/>
+			</EscapingLogLayout>
+		</File>
+
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="DebugFile"/>
+			<AppenderRef ref="InfoFile"/>
+			<AppenderRef ref="WarnFile"/>
+			<AppenderRef ref="ErrorFile"/>
+		</Root>
+	</Loggers>
+</Configuration>

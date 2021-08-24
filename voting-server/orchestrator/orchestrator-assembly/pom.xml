@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ch.post.it.evoting.votingserver.orchestrator</groupId>
+		<artifactId>orchestrator</artifactId>
+		<version>0.11.3.0</version>
+	</parent>
+
+	<artifactId>orchestrator-assembly</artifactId>
+	<packaging>pom</packaging>
+	<name>Orchestrator - Assembly</name>
+	<description>Orchestrator Assembly</description>
+
+	<properties>
+		<jacoco.skip>true</jacoco.skip>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.orchestrator</groupId>
+			<artifactId>orchestrator-main</artifactId>
+			<type>war</type>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>package.xml</descriptor>
+					</descriptors>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>ov-orchestrator-assembly-${project.version}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

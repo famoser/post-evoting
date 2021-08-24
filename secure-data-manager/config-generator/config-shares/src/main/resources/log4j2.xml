@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<Appenders>
+	<Console name="ConsoleAppender" target="SYSTEM_OUT">
+		<EscapingLogLayout>
+			<PatternLayout pattern="%d - %m%n"/>
+		</EscapingLogLayout>
+	</Console>
+</Appenders>
+<Loggers>
+	<Root level="INFO">
+		<AppenderRef ref="ConsoleAppender"/>
+	</Root>
+</Loggers>
+</Configuration>
+

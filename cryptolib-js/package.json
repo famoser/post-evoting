@@ -1,0 +1,32 @@
+{
+  "name": "cryptolib-js",
+  "license": "(c) Original Developers indicated in attribution.txt, 2021. All Rights Reserved.",
+  "private": true,
+  "version": "0.11.3",
+  "scripts": {
+    "compile": "eslint src/**/**.js",
+    "test": "karma start test/karma-run-1.conf.js && karma start test/karma-run-2.conf.js",
+    "coverage:report": "nyc report --report-dir=coverage --reporter=lcov --reporter=text -t coverage/unit-run",
+    "test:coverage": "npm run test && npm run coverage:report"
+  },
+  "dependencies": {
+    "node-forge": "0.10.0",
+    "sjcl": "1.0.8"
+  },
+  "devDependencies": {
+    "browserify": "16.5.2",
+    "browserify-istanbul": "3.0.1",
+    "chai": "4.3.4",
+    "eslint": "7.32.0",
+    "karma": "6.3.4",
+    "karma-browserify": "8.1.0",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-coverage": "2.0.3",
+    "karma-jasmine": "4.0.1",
+    "nyc": "15.1.0"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  }
+}

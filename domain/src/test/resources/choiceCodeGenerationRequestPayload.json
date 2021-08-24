@@ -1,0 +1,137 @@
+{
+  "tenantId": "9b1",
+  "electionEventId": "989",
+  "verificationCardSetId": "9a0",
+  "choiceCodeGenerationInputList": [
+	{
+	  "verificationCardId": "0",
+	  "encryptedHashedSquaredConfirmationKey": {
+		"gamma": 1,
+		"phis": [
+		  1,
+		  2
+		],
+		"p": 23,
+		"q": 11
+	  },
+	  "encryptedHashedSquaredPartialChoiceReturnCodes": [
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		},
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		},
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		}
+	  ]
+	},
+	{
+	  "verificationCardId": "1",
+	  "encryptedHashedSquaredConfirmationKey": {
+		"gamma": 1,
+		"phis": [
+		  1,
+		  2
+		],
+		"p": 23,
+		"q": 11
+	  },
+	  "encryptedHashedSquaredPartialChoiceReturnCodes": [
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		},
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		},
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		}
+	  ]
+	},
+	{
+	  "verificationCardId": "2",
+	  "encryptedHashedSquaredConfirmationKey": {
+		"gamma": 1,
+		"phis": [
+		  1,
+		  2
+		],
+		"p": 23,
+		"q": 11
+	  },
+	  "encryptedHashedSquaredPartialChoiceReturnCodes": [
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		},
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		},
+		{
+		  "gamma": 1,
+		  "phis": [
+			1,
+			2
+		  ],
+		  "p": 23,
+		  "q": 11
+		}
+	  ]
+	}
+  ],
+  "signature": {
+	"signatureContents": "S/bR99XuMEUHYwFyfir7AB6mHqAyGpIfOV7jsAmRxiHqH4IZvsko2df0S95FJ91S+khDBSfbdtuMb8dc8XEGoCtOwzajNGgprU+uhuZhdAy4+LO5+r77SQ94y/t6E3/LEm9pc5bpgtHloYEua4UALJuD9FElQgnYCJkDXA1T0NkqTIg8M+9m1ScLlPdCTVVzyKAZ0/aElQtjP8NXdR8dXhMHc0cqh3FQ5JIbDe4OF7d0xjtKJa+ViE1ksfGX1UREy0gIUW+A/dE5IBCvyp7k3d38VOaYeXe3MFfp5dub7VWi+hQIAFduC/KbaA0BgeAW29cEtMC4RCJytWTGuTrrhw==",
+	"certificateChain": [
+	  "-----BEGIN CERTIFICATE-----\nMIIDlTCCAn2gAwIBAgIVANxTE63JI/y05L+waICrpi9G93hNMA0GCSqGSIb3DQEB\nCwUAMF8xFjAUBgNVBAMMDVRlbmFudCAxMDAgQ0ExFjAUBgNVBAsMDU9ubGluZSBW\nb3RpbmcxFTATBgNVBAoMDE9yZ2FuaXphdGlvbjEJMAcGA1UEBwwAMQswCQYDVQQG\nEwJFUzAeFw0xODA4MTcxMDQ0MDNaFw0xOTA4MTcwOTM5MzdaMIGGMT0wOwYDVQQD\nDDRBZG1pbmlzdHJhdGlvbkJvYXJkIDUzNDE2NGY4MzBmOTQ1MzY4ODYxMGNjNTE5\nOGJmMjJmMRYwFAYDVQQLDA1PbmxpbmUgVm90aW5nMRUwEwYDVQQKDAxPcmdhbml6\nYXRpb24xCTAHBgNVBAcMADELMAkGA1UEBhMCRVMwggEiMA0GCSqGSIb3DQEBAQUA\nA4IBDwAwggEKAoIBAQCJYoPQ52L/W1nHf2MZ6bBADUvvsVhKyxuutrMbwB18xNMT\nzsoHQOA7gxpRlf9ztDFQYhqa+GCPh42ms8bvXUGCKGHnrT/I7luY+MN0Sh/nHbuR\ntp14lbtcnXSIWj2czNqMKihKpKBaPJxC55Yx0Es7vRzYVJ8ZbTaPGmGvU+7+Whw2\nZxHO4DFNk6BPE4mfyIsLI0cj5V4xhBp68qDKjT3RwDBFO8k6yBinDR9Gn7i7bcjt\nbKhMVwYtj1D59KHHCOP/xqzg95QabOoPIbjWv1id5tssD6HK0SVWLlgUCmxvezdE\neOoFSa8Kn6X/FGASEB9e+lWQ0knrq+AeFqZOwxS7AgMBAAGjIDAeMA4GA1UdDwEB\n/wQEAwIGwDAMBgNVHRMBAf8EAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQCTYS3ESxgD\nw613ycLl9WlB18WdHe9NSsFNFm5Jxujp7CRZjRP7cMiqPLFS6rVG4HWvzXoCHoOf\nXQwKuqHyQ1705Mx6ZzuWJRjlgpVf0U5RHNH6weWYJWVx/2e/JZLCjIDE6ACVmg6e\n/SkxEt6B2BB/lNlZibviNUWUbKXrNJhZQ4P/mXI6+gv1CkhuVmlQSOC2iKs2kvhJ\naoKhQWDa3BgvgUSfkb5t6FBjfCkO3J2Fo/7vEEum4JF/+ZlA2jELpN7oWMqPnPfk\n2pmF30L0EiTAL4eowLgFFNrQtSqwAPgUlWyqbd5oFB6Gvd9lUA64PJGPbAZZ+TTX\ne4ahW7PmiyVY\n-----END CERTIFICATE-----\n",
+	  "-----BEGIN CERTIFICATE-----\nMIIDcDCCAligAwIBAgIVAMpscEoMixPP3nFtW3qhooUYWlUZMA0GCSqGSIb3DQEB\nCwUAMF8xFjAUBgNVBAMMDVNjeXRsIFJvb3QgQ0ExFjAUBgNVBAsMDU9ubGluZSBW\nb3RpbmcxFTATBgNVBAoMDE9yZ2FuaXphdGlvbjEJMAcGA1UEBwwAMQswCQYDVQQG\nEwJFUzAeFw0xODA4MTcwOTM5MzhaFw0xOTA4MTcwOTM5MzhaMF8xFjAUBgNVBAMM\nDVRlbmFudCAxMDAgQ0ExFjAUBgNVBAsMDU9ubGluZSBWb3RpbmcxFTATBgNVBAoM\nDE9yZ2FuaXphdGlvbjEJMAcGA1UEBwwAMQswCQYDVQQGEwJFUzCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBALGpIsWn2a2QQhjwK2uRlvq1PMqs7IScYui4\nDsfAi4rEzJx1EDAS2zNVBEZwp4UKysaL5iEZLxwICf8Zdkoy2fnMiKlMXOaPRpRc\njEBPBJ41nk9fPHs2u3AUOmbXb26Ks9qFL++2Ei/AsxDXbSQNEYqJ61bROCcBsisc\nyFSv1uVeSo39bH4xaWrfHyUEiSnpR/n+hB4VpdbVoY0TC1PAN689XQDFlbwaKAGu\nrUFA+NLbO5aTQ4oO7LkiOw9fMSTjKkQsJV+Oa30rY0T98rNG7ADJiuf7IndwEP//\nEJzq4nX48vUrajSLH5rEkV2G6OjuKMdw7oAABlr9QeRWlbIeFWMCAwEAAaMjMCEw\nDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYwDQYJKoZIhvcNAQELBQAD\nggEBAGxZ7gxWy41ARVmY+LA1/9/vWnaTg0zMqKz5ycJst04PvhATRXIJPYNLW54H\n0wpFYD7rIcdo6JbYq5EIUEvkuUlLf4V1z2u28FVWqNlaLFGqvkm2DNJ5rwpwIAvn\ndyFjXrwQtxh4IbX+1GlmCEQL4sX2jiqZrhNEDyw3P6saXyaES0TeQiJZGyEMiMtV\nviEGC8wYMYvhP2rMPRSfW/W4zuF7S1FsIAFyi7/RuXF1pO3MpE1rzKJc9bCQSCdv\nYp4l5VWibfEyJgWQWD9Ty5bCn0rJSHvyBIqgTFvSmPBxGMfvnLuTzRjq7p3eEaD4\nS9vdzls6xnj2dlcsjJCFx93g2Uo=\n-----END CERTIFICATE-----\n"
+	]
+  }
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>ch.post.it.evoting</groupId>
+	<artifactId>evoting</artifactId>
+	<version>0.11.3.0</version>
+	<packaging>pom</packaging>
+	<name>evoting</name>
+
+	<properties>
+		<jacoco.version>0.8.7</jacoco.version>
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+		<maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
+		<maven-enforcer-plugin.requiredMavenVersion>3.5.0</maven-enforcer-plugin.requiredMavenVersion>
+		<maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+		<maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
+
+		<project.build.outputTimestamp>2021-04-28T00:00:00Z</project.build.outputTimestamp>
+
+		<!-- Sonar -->
+		<sonar.scm.disabled>true</sonar.scm.disabled>
+		<sonar.host.url>https://sonar.tools.pnet.ch</sonar.host.url>
+		<sonar.skipDesign>true</sonar.skipDesign>
+		<sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+		<sonar.junit.reportPaths>${project.basedir}/target/surefire-reports/</sonar.junit.reportPaths>
+		<sonar.javascript.lcov.reportPaths>${project.basedir}/coverage/lcov.info</sonar.javascript.lcov.reportPaths>
+		<sonar.coverage.exclusions>**/test/**/*,**/tests/**/*</sonar.coverage.exclusions>
+		<sonar.java.source>${maven.compiler.source}</sonar.java.source>
+		<sonar.java.target>${maven.compiler.target}</sonar.java.target>
+	</properties>
+
+	<modules>
+		<module>evoting-dependencies</module>
+		<module>cryptolib</module>
+		<module>domain</module>
+		<module>logger</module>
+		<module>voting-server</module>
+		<module>control-components</module>
+		<module>secure-data-manager</module>
+		<module>cryptolib-js</module>
+		<module>voting-client-js</module>
+		<module>voter-portal</module>
+		<module>tools/config-encryption-parameters-tool</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>${maven-release-plugin.version}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<preparationGoals>clean install</preparationGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<configuration>
+					<doclint>none</doclint>
+					<failOnError>false</failOnError>
+					<notimestamp>true</notimestamp>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>${maven-enforcer-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>${maven-enforcer-plugin.requiredMavenVersion}</version>
+								</requireMavenVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

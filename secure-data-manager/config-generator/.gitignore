@@ -1,0 +1,10 @@
+target
+bin
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+infinitest.args
+infinitest.filter
+config-engine/output/

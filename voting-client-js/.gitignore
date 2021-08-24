@@ -1,0 +1,15 @@
+# Generated directories
+node_modules/
+build/
+release/
+dist/
+ov-api*tgz
+**/target/
+coverage
+
+# Logs
+*.log
+
+# Intellij
+.idea
+*.iml

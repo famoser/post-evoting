@@ -1,0 +1,14 @@
+{
+  "correctnessInformationList": [
+	{
+	  "correctnessId": "e7c8b3ac09f64d95b08a6f451e0608fe",
+	  "numberOfSelections": 1,
+	  "numberOfVotingOptions": 24
+	},
+	{
+	  "correctnessId": "acc6fffa007e413d8c2c51f80039f810",
+	  "numberOfSelections": 12,
+	  "numberOfVotingOptions": 408
+	}
+  ]
+}

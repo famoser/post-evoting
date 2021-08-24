@@ -1,0 +1,32 @@
+/*
+ * (c) Original Developers indicated in attribution.txt, 2021. All Rights Reserved.
+ */
+package ch.post.it.evoting.cryptolib.elgamal.service;
+
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+
+import ch.post.it.evoting.cryptolib.api.elgamal.ElGamalServiceAPI;
+import ch.post.it.evoting.cryptolib.api.services.ServiceFactory;
+import ch.post.it.evoting.cryptolib.commons.concurrent.PooledProxiedServiceFactory;
+
+/**
+ * This Service factory creates thread-safe services. Thread-safe services proxy all requests to a pool of non thread-safe service instances.
+ */
+public class PollingElGamalServiceFactory extends PooledProxiedServiceFactory<ElGamalServiceAPI> implements ServiceFactory<ElGamalServiceAPI> {
+
+	/**
+	 * Constructor that uses default values.
+	 */
+	public PollingElGamalServiceFactory() {
+		super(new BasicElGamalServiceFactory(), new GenericObjectPoolConfig());
+	}
+
+	/**
+	 * Constructor that uses the given path to read cryptographic properties and the pool config to setup the pool of services.
+	 *
+	 * @param poolConfig the configuration of the pool.
+	 */
+	public PollingElGamalServiceFactory(final GenericObjectPoolConfig poolConfig) {
+		super(new BasicElGamalServiceFactory(), poolConfig);
+	}
+}

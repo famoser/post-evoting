@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ch.post.it.evoting.votingserver</groupId>
+		<artifactId>voting-server</artifactId>
+		<version>0.11.3.0</version>
+	</parent>
+
+	<artifactId>voting-server-assembly</artifactId>
+	<packaging>pom</packaging>
+	<name>Voting Server - Assembly</name>
+	<description>Voting Server assembly</description>
+
+	<properties>
+		<jacoco.skip>true</jacoco.skip>
+		<javac.version>1.8</javac.version>
+		<surfire.version>2.17</surfire.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.extendedauthentication</groupId>
+			<artifactId>extended-authentication-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.extendedauthentication</groupId>
+					<artifactId>extended-authentication-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.apigateway</groupId>
+			<artifactId>api-gateway-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.apigateway</groupId>
+					<artifactId>api-gateway-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.authentication</groupId>
+			<artifactId>authentication-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.authentication</groupId>
+					<artifactId>authentication-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.certificateregistry</groupId>
+			<artifactId>certificate-registry-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.certificateregistry</groupId>
+					<artifactId>certificate-registry-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.electioninformation</groupId>
+			<artifactId>election-information-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.electioninformation</groupId>
+					<artifactId>election-information-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.votermaterial</groupId>
+			<artifactId>voter-material-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.votermaterial</groupId>
+					<artifactId>voter-material-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.voteverification</groupId>
+			<artifactId>vote-verification-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.voteverification</groupId>
+					<artifactId>vote-verification-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.votingworkflow</groupId>
+			<artifactId>voting-workflow-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.post.it.evoting.votingserver.votingworkflow</groupId>
+					<artifactId>voting-workflow-main</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.post.it.evoting.votingserver.orchestrator</groupId>
+			<artifactId>orchestrator-assembly</artifactId>
+			<version>${project.version}</version>
+			<type>zip</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Assembly the zip with all files for Voting Server -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>package.xml</descriptor>
+					</descriptors>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>voting-server-assembly-${project.version}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-archive</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
