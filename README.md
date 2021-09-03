@@ -2,7 +2,7 @@
 
 This fork aims to be a "batteries-included" solutions to let the project run on arch linux. See the [installation manual](./ARCH_INSTALLATION.md).
 
-You need [git lfs](https://git-lfs.github.com/)
+You need [git lfs](https://git-lfs.github.com/).
 
 # Swiss Post Voting System
 
