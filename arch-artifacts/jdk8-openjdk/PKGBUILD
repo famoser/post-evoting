@@ -5,8 +5,8 @@
 pkgname=('jre8-openjdk-headless' 'jre8-openjdk' 'jdk8-openjdk' 'openjdk8-src' 'openjdk8-doc')
 pkgbase=java8-openjdk
 _java_ver=8
-_jdk_update=292
-_jdk_build=10
+_jdk_update=302
+_jdk_build=08
 pkgver=${_java_ver}.u${_jdk_update}
 _repo_ver=jdk${_java_ver}u${_jdk_update}-b${_jdk_build}
 pkgrel=1
@@ -25,14 +25,14 @@ source=(jdk8u-${_repo_ver}.tar.gz::${_url_src}/archive/${_repo_ver}.tar.gz
         langtools-${_repo_ver}.tar.gz::${_url_src}/langtools/archive/${_repo_ver}.tar.gz
         nashorn-${_repo_ver}.tar.gz::${_url_src}/nashorn/archive/${_repo_ver}.tar.gz)
 
-sha256sums=('aba46c3c758b5fdedc812ce7d8ac46b45c3dfc2c51e41f9b23683d3ea4119d2b'
-            '55028874f71eda4bd170580885dd1bf707fd69c1e4a4af14175e6ac777ef5927'
-            '6a6be1e9d69d0bc8ca98b356e1150baae9e112241e3392c2adb6b30ec82864af'
-            '67f1c3a2c897c81bafb14327fcea249b9faac31a0b4d09321eae79847d4ea509'
-            '749073e9ba943a6fc87239d808463b05c804a5855fbc8c99fe9a090ae8cd07ef'
-            'ca954d02629c43a0b553df75c1c7fe9cea31c428d99a9718a3e6860d684fb8a1'
-            'e742f778cbdcb76b4dc593b9fed4bee26af91972096a265c1edb6d8e6ddf6fa3'
-            '1f335e8fb4ddff5786d1b65345daa4e525aa4ebcefe7e24bf5428b259e47c5d0')
+sha256sums=('a2f6f4cf7b5ff62c3b7aff7ce87f46c43f3179a2607ec3c0e33018a7171b3a15'
+            '5df2ed878de523f8f1489cbafda1e2ee8970891297dda306340fa6b4a080b4fb'
+            'ed7e14122dd2be33204dac47acf035a6d3a9b22b2f11f2f0e4e9bd7980808384'
+            '9a67786202d9fbfb7659ef1274b49efb05162b7e5884106f90354010a93d5031'
+            '8b366e44f3e5acabd02d525294f3fb796588b931577997769843abe7606eee39'
+            '316232042c5b60baa4a538d83b562c21761af6f0a6bae029eef6af0ce70ff70e'
+            'd989f979c1da15bc0701150d6b82483214890bec007ba56846a0bf294104c150'
+            '5be0928188ff48f2880d6db3856c35b7ab2253c0f86d9b38fda850b6992055a5')
 
 case "${CARCH}" in
   'x86_64') _JARCH=amd64 ; _DOC_ARCH=x86_64 ;;
