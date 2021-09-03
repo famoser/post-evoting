@@ -1,18 +1,14 @@
 # Installation (arch linux)
 
+## backend
+
 install java 8 & tooling
 ```sh
 pacman -S jdk8-openjdk jre8-openjdk mvn node npm
 ```
 
-configure IntelliJ to use Java 8
-- go to `File` -> `Project Structure`
-- select left `Platform Settings` -> `SDKs`
-- point to `/usr/lib/jvm/java-8-openjdk`
-
 add to `.bashrc` to use Java 8
-```
-# Java 8 (for E-Voting)
+```sh
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH="/usr/lib/jvm/java-8-openjdk/bin:$PATH"
 ```
@@ -34,3 +30,49 @@ build main system
 ```sh
 mvn clean install -DskipTests
 ```
+
+expected issues:
+ - cryptolib: PBEWithSHA1AndDESede algorithm not found (potential bug?)
+ - frontend fails (because not configured yet)
+
+## frontend
+
+add to `.bashrc`
+```sh
+export CHROME_BIN="/usr/bin/chromium"
+```
+(reload with `source .bashrc` if you want to keep the cmd open)
+
+## configure IDEs
+
+### using IntelliJ
+
+test system is maven, which is only partially implemented in [IntelliJ](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206884445-Run-Single-Test-Case-with-Maven)
+
+configure to use Java 8
+- go to `File` -> `Project Structure`
+- select left `Platform Settings` -> `SDKs`
+- point to `/usr/lib/jvm/java-8-openjdk`
+
+configure to use Maven
+- go to `Add configuration` (top right)
+- click on plus icon
+- choose `Maven`
+- set the working directly
+- set `install` or `test` as `Command Line`
+
+## using NetBeans
+
+configure to use Java 8
+- right-click on `evoting` in the `Projects` window left
+- select `Properties`
+- go to `Build` -> `Compile`
+- click on `Manage Java Platform`
+- add the Java 8 platform in `/usr/lib/jvm/java-8-openjdk`
+- close the subwindow again
+- select the Java 8 platform
+
+set Java 8 as default
+- create `~/.netbeans/*version*/etc/netbeans.conf` for *version* the netbeans version (like `~/.netbeans/12.4/etc/netbeans.conf`)
+- add `netbeans_jdkhome="/usr/lib/jvm/java-8-openjdk"`
+- restart netbeans

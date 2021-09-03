@@ -15,3 +15,5 @@ bin/
 
 # Maven local repository
 .m2/
+
+crypto-primitives
