@@ -7,12 +7,16 @@ install java 8 & tooling
 pacman -S jdk8-openjdk jre8-openjdk mvn node npm
 ```
 
-add to `.bashrc` to use Java 8
+set `JAVA_HOME` in `.bashrc`
 ```sh
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export PATH="/usr/lib/jvm/java-8-openjdk/bin:$PATH"
 ```
 (reload with `source .bashrc` if you want to keep the cmd open)
+
+set java 8 as active java with 
+```sh
+archlinux-java set java-8-openjdk
+```
 
 install the [iaikPkcs11Wrapper](https://jce.iaik.tugraz.at/products/core-crypto-toolkits/pkcs11-wrapper/)
 ```sh
