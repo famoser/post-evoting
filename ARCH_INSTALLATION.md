@@ -32,7 +32,7 @@ mvn clean install -DskipTests
 ```
 
 expected issues:
- - cryptolib: PBEWithSHA1AndDESede algorithm not found (potential bug?)
+- `ch.post.it.evoting.cryptolib.api.exceptions.CryptoLibException: Could not add the entry.` crashes with root cause `Key protection  algorithm not found: java.security.UnrecoverableKeyException: Encrypt Private Key failed: unrecognized algorithm name: PBEWithSHA1AndDESede`. There is a bug in the JDK 8u292 (currently released in arch) which is fixed in 8u301 [source](https://github.com/bcgit/bc-java/issues/941#issuecomment-883767514). Arch packages are out of date and flagged appropriately [source](https://archlinux.org/packages/extra/x86_64/java8-openjdk/).
  - frontend fails (because not configured yet)
 
 ## frontend
