@@ -35,10 +35,10 @@ build main system
 mvn clean install -DskipTests
 ```
 
-path java 8 JDK (as arch release outdated)
+update java 8 JDK (as arch release outdated)
 ```
 cd arch-artifacts/jdk8-openjdk
-makepkg -si
+pacman -U *
 ```
 
 expected issues:
